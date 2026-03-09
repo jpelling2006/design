@@ -1,0 +1,16 @@
+/* body {
+    height: 600px;
+    width: 800px;
+} */
+
+div .card {
+    padding: 20px
+}
+
+@font-face {
+  font-family: 'Bootstrap Icons';
+  src: url('../fonts/bootstrap-icons.woff') format('woff'),
+       url('../fonts/bootstrap-icons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
