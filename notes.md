@@ -15,16 +15,14 @@
 
 # creation page
 - [x] specific days of week
-- [ ] add undo/redo buttons to the message editor
-- [ ] options only visible when switched on, misleading otherwise
+- [x] add undo/redo buttons to the message editor
+- [x] options only visible when switched on, misleading otherwise
 - [x] shorten titles
-<!-- - [ ] change colour of cancel -> secondary -->
-- [ ] save and cancel should both have popups
-- [ ] message editor options could be in the same row
+- [x] save and cancel should both have popups
+- [x] message editor options could be in the same row
 - [x] box holding the message could have bg-light
-- [ ] if requirements arent met, add error messages
-- [ ] add expiry date!
-- [ ] add help button
+- [x] add expiry date!
+- [x] add help button
 
 # report
 - [ ] write abt keyboard shortcuts
@@ -33,3 +31,4 @@
     - [ ] ctrl + n for new message
     - [ ] ctrl c/x/v in message editor
     - [ ] ctrl z/y in message editor
+- [ ] if requirements arent met, add error messages
