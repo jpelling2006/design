@@ -13,10 +13,22 @@
 
             <hr>
 
-            <div class="d-flex flex-column flex-sm-row gap-2">
-                <a href="creation.html" class="btn btn-success p-2">Create New Message</a>
-                <button class="btn btn-danger p-2">Delete All Messages</button>
-                <!-- <button class="btn btn-danger p-2 disabled" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Nothing to delete">Delete All Messages</button> -->
+            <!-- when toggle is on, buttons should be disabled -->
+            <div class="d-flex flex-column justify-content-between align-items-center flex-sm-row gap-2">
+                <div class="d-flex gap-2">
+                    <fieldset id="onFieldset">
+                        <div class="form-check form-switch">
+                            <label class="form-check-label" for="onChecked">
+                                Automatic Replies Enabled
+                            </label>
+                            <input class="form-check-input" type="checkbox" id="onChecked" checked="">
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="d-flex gap-2">
+                    <a href="creation.html" class="btn btn-success p-2">Create New Message</a>
+                    <button class="btn btn-danger p-2" data-bs-toggle="modal" data-bs-target="#deleteAllModal">Delete All Messages</button>
+                </div>
             </div>
 
             <hr>
@@ -63,20 +75,25 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                     
-                    <div class="modal-header">
-                        <h5 class="modal-title">Out of Office Message</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-                    
-                    <div class="modal-body" style="font-family:Arial, Helvetica, sans-serif">
-                        Thank you for your message. I am out of the office until 22/06/2026.<br>
-                        Diolch am eich neges. Rwrf allan o'r swyddfa tan 22/06/2026
-                    </div>
-                    
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Close </button>
-                    </div>
-                    
+                        <div class="modal-header">
+                            <h5 class="modal-title">Out of Office Message</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        
+                        <div class="modal-body">
+                            <p>
+                                <b>12/05/2026-12/06/2026</b> | Mon-Wed Fri | 17:30 - 21:00
+                            </p>
+                            <hr>
+                            <p style="font-family:Arial, Helvetica, sans-serif; ">
+                                Thank you for your message. I am out of the office until 22/06/2026.<br>
+                                Diolch am eich neges. Rwrf allan o'r swyddfa tan 22/06/2026
+                            </p>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Close </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -120,6 +137,34 @@
                 </div>
             </div>
 
+            <div class="modal fade" id="deleteAllModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    
+                        <div class="modal-header">
+                            <h5 class="modal-title">Deletion Confirmation</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        
+                        <div class="modal-body">
+                            <p style="font-size:15pt; margin:0;"><b>Are you sure you want to delete <i class="text-danger">all</i> messages?</b></p>
+                            <p><b>This cannot be undone!</b></p>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <div class="d-flex justify-content-between w-100">
+                                <button class="btn btn-outline-primary">Help</button>
+                                <div class="d-flex gap-2">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Cancel </button>
+                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal"> Delete </button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+
             <br>
 
             <div class="d-flex justify-content-between flex-column flex-sm-row gap-2">
@@ -127,5 +172,6 @@
                 <button class="btn btn-danger p-2">Cancel</button>
             </div>
         </div>
+        <hr>
     </body>
 </html>

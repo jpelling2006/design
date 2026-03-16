@@ -1,17 +1,23 @@
 # home page
 - [x] more than one automatic reply
-- [ ] make it more visible if automatic replies are currently on
+- [x] make it more visible if automatic replies are currently on
+  - [ ] add js
 - [x] add a lil "help" button
 - [x] make "cancel" a different colour to delete
 - [ ] add a disabled delete all messages button OR add a message saying theres nothing to delete
 - [x] make cards for message previews use bg-light for visibility
-- [ ] add confirmation to "delete all messages"
+- [x] add confirmation to "delete all messages"
 
 ## delete popup
 - [x] "This cannot be undone!"
 - [x] add datetime info
 - [x] make question larger
 - [x] add help button
+
+## view popup
+- [ ] add dates to popup
+- [ ] add edit and delete shortcut actions
+- [ ] 
 
 # creation page
 - [x] specific days of week
