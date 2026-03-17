@@ -1,10 +1,9 @@
 # home page
 - [x] more than one automatic reply
 - [x] make it more visible if automatic replies are currently on
-  - [ ] add js
+  - [x] add js
 - [x] add a lil "help" button
 - [x] make "cancel" a different colour to delete
-- [ ] add a disabled delete all messages button OR add a message saying theres nothing to delete
 - [x] make cards for message previews use bg-light for visibility
 - [x] add confirmation to "delete all messages"
 
@@ -15,8 +14,8 @@
 - [x] add help button
 
 ## view popup
-- [ ] add dates to popup
-- [ ] add edit and delete shortcut actions
+- [x] add dates to popup
+- [x] add edit and delete shortcut actions
 - [ ] 
 
 # creation page
@@ -38,3 +37,4 @@
     - [ ] ctrl c/x/v in message editor
     - [ ] ctrl z/y in message editor
 - [ ] if requirements arent met, add error messages
+- [ ] add a disabled delete all messages button OR add a message saying theres nothing to delete

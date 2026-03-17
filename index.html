@@ -18,10 +18,10 @@
                 <div class="d-flex gap-2">
                     <fieldset id="onFieldset">
                         <div class="form-check form-switch">
-                            <label class="form-check-label" for="onChecked">
+                            <label class="form-check-label" for="onChecked" id="autoReplyLabel">
                                 Automatic Replies Enabled
                             </label>
-                            <input class="form-check-input" type="checkbox" id="onChecked" checked="">
+                            <input class="form-check-input" type="checkbox" id="onChecked">
                         </div>
                     </fieldset>
                 </div>
@@ -31,9 +31,47 @@
                 </div>
             </div>
 
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    const toggle = document.getElementById('onChecked');
+                    const messageCards = document.querySelectorAll('.card');
+                    const messageButtons = document.querySelectorAll('.card button');
+                    const label = document.getElementById('autoReplyLabel');
+                    const statusMessage = document.getElementById('statusMessage');
+
+                    function toggleMessages() {
+                        if (!toggle.checked) {
+                            label.textContent = 'Automatic Replies Disabled';
+                            statusMessage.textContent = 'You have 2 messages (automatic replies currently disabled).';
+                            messageCards.forEach(card => {
+                                card.classList.add('greyed-out');
+                            });
+                            messageButtons.forEach(button => {
+                                button.classList.add('disabled'); 
+                                button.setAttribute('disabled', true);
+                            });
+                        } else {
+                            label.textContent = 'Automatic Replies Enabled';
+                            statusMessage.textContent = 'You have 2 messages (none currently active).';
+                            messageCards.forEach(card => {
+                                card.classList.remove('greyed-out'); 
+                            });
+                            messageButtons.forEach(button => {
+                                button.classList.remove('disabled');
+                                button.removeAttribute('disabled'); 
+                            });
+                        }
+                    }
+
+                    toggleMessages();
+
+                    toggle.addEventListener('change', toggleMessages);
+                });
+            </script>
+
             <hr>
 
-            <p><b>You have 2 messages (None currently active).</b></p>
+            <p><b id="statusMessage">You have 2 messages (None currently active).</b></p>
             
             <div class="card bg-light">
                 <div class="card">
@@ -92,7 +130,13 @@
                         </div>
                         
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Close </button>
+                            <div class="d-flex gap-2 justify-content-between w-100">
+                                <div class="d-flex gap-2">
+                                    <button class="btn btn-primary p-2">Edit</button>
+                                    <button class="btn btn-danger p-2" data-bs-toggle="modal" data-bs-target="#deletionModal">Delete</button>
+                                </div>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Close </button>
+                            </div>
                         </div>
                     </div>
                 </div>

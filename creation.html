@@ -14,7 +14,7 @@
             <h2>Timing Management</h2>
 
             <div class="card bg-light">
-                <fieldset id="expiryFielset">
+                <!-- <fieldset id="expiryFielset">
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="expiryChecked">
                         <label class="form-check-label" for="expiryChecked">
@@ -30,7 +30,7 @@
                     </div>
                 </fieldset>
 
-                <br>
+                <br> -->
 
                 <fieldset id="dateRangeFieldset">
                     <div class="form-check form-switch">
@@ -56,14 +56,21 @@
                 <script>
                     window.onload = function() {
                         let today = new Date().toISOString().split('T')[0];
-                        document.getElementById('expiry').setAttribute('min', today);
                         document.getElementById('startDate').setAttribute('min', today);
                         document.getElementById('endDate').setAttribute('min', today);
+
+                        document.getElementById('startDate').addEventListener('input', function(){
+                            let startDateValue = document.getElementById('startDate').value;
+                            if (startDateValue) {
+                                document.getElementById('endDate').setAttribute('min', startDateValue);
+                            }
+                        });
                     };
                 </script>
 
                 <br>
 
+                <!-- no min here bc the timings can go over midnight -->
                 <fieldset>
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" value="" id="timeRangeChecked">
@@ -121,19 +128,6 @@
 
                 <script>
                     document.addEventListener("DOMContentLoaded", function () {
-                    // expiry
-                    const expiryToggle = document.getElementById("expiryChecked");
-                    const expiryDate = document.getElementById("expiry");
-                    const expiryPicker = document.getElementById("expiryPicker");
-
-                    function updateExpiryFields() {
-                        const isEnabled = expiryToggle.checked;
-                        expiryDate.disabled = !isEnabled;
-                        expiryPicker.style.display = isEnabled ? "flex" : "none";
-                    }
-                    updateExpiryFields();
-                    expiryToggle.addEventListener("change", updateExpiryFields);
-
                     // Date Range
                     const dateToggle = document.getElementById("dateRangeChecked");
                     const startDate = document.getElementById("startDate");
