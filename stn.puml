@@ -1,0 +1,26 @@
+@startuml state
+scale 350 width
+hide empty description
+
+[*] --> HomeState
+HomeState --> CreateState : "Create New Message" Selected
+HomeState --> ViewState : "View" Selected
+HomeState --> EditState : "Edit" Selected
+HomeState --> DeleteState : "Delete" Selected
+HomeState --> DeleteAllState : "Delete All Messages" Selected
+
+CreateState --> HomeState : "Save" / "Cancel" Selected
+
+ViewState --> HomeState : "Close" Selected
+ViewState --> EditState : "Edit" Selected
+ViewState --> DeleteState : "Delete" Selected
+
+EditState --> HomeState : "Save" / "Cancel" Selected
+
+DeleteState --> HomeState : "Delete" / "Cancel" Selected
+
+DeleteAllState --> HomeState : "Delete" / "Cancel" Selected
+
+HomeState --> [*] : "Cancel" Selected
+
+@enduml

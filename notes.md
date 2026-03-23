@@ -1,2 +1,0 @@
-- [x] specific days of week
-- [x] more than one automatic reply

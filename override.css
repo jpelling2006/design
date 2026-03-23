@@ -14,3 +14,18 @@ div .card {
   font-weight: normal;
   font-style: normal;
 }
+
+.container {
+    max-width: 750px
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: menulist-button;
+  display: block;
+}
+
+.greyed-out {
+  opacity: 0.5;
+  pointer-events: none; /* Disables interaction */
+}
